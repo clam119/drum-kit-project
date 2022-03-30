@@ -1,26 +1,13 @@
-var numberOfDrumButtons = document.querySelectorAll(".drum").length;
-
-for (var i = 0; i < numberOfDrumButtons; i++) {
-
-    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-
-        var buttonInnerHTML = this.innerHTML;
-
-        makeSound(buttonInnerHTML);
-
-        buttonAnimation(buttonInnerHTML);
-    });
-
-}
+$("button").click(function(event){
+  var buttonInnerHTML = this.innerHTML;
+  makeSound(buttonInnerHTML);
+  buttonAnimation(buttonInnerHTML);
+});
 
 //Detect Keyboard Press
-
-document.addEventListener("keydown", function (event) {
-
+$(document).keydown(function(event){
     makeSound(event.key);
-
     buttonAnimation(event.key);
-
 });
 
 function makeSound(key) {
